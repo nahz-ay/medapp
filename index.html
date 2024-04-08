@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedApp</title>
+    <link href="styles/login.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form id="signUpForm" action="#">
+          <h1>Create Account</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i> </a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>or use your email for registration</span>
+          <input type="text" id="signUpName" placeholder="Name" required />
+          <input type="email" id="signUpEmail" placeholder="Email" required />
+          <input
+            type="password"
+            id="signUpPassword"
+            placeholder="Password"
+            required
+          />
+          <input
+            type="password"
+            id="signUpConfirmPassword"
+            placeholder="Confirm Password"
+            required
+          />
+          <button type="submit">Sign Up</button>
+          <button class="mobSignupBtn signIn">Already have an account</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form action="#">
+          <h1>Sign in</h1>
+          <div class="social-container">
+            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <span>or already have account</span>
+          <input type="email" id="signInEmail" placeholder="Email" required />
+          <input
+            type="password"
+            id="signInPassword"
+            placeholder="Password"
+            required
+          />
+          <a href="#">Forgot your password?</a>
+          <button type="submit">Sign In</button>
+          <button class="mobSignupBtn signUp" id="signUp">
+            Create an account
+          </button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>
+              To keep connected with us please login with your personal info
+            </p>
+            <button class="signIn ghost">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button class="signUp ghost">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const signUpButtons = document.getElementsByClassName("signUp");
+      const signInButtons = document.getElementsByClassName("signIn");
+      const container = document.getElementById("container");
+
+      // Loop through each signUp button and attach event listener
+      for (let i = 0; i < signUpButtons.length; i++) {
+        signUpButtons[i].addEventListener("click", () => {
+          container.classList.add("right-panel-active");
+        });
+      }
+      // Loop through each signIn button and attach event listener
+      for (let i = 0; i < signInButtons.length; i++) {
+        signInButtons[i].addEventListener("click", () => {
+          container.classList.remove("right-panel-active");
+        });
+      }
+
+      const signUpForm = document.getElementById("signUpForm");
+      const signUpName = document.getElementById("signUpName");
+      const signUpEmail = document.getElementById("signUpEmail");
+      const signUpPassword = document.getElementById("signUpPassword");
+      const signUpConfirmPassword = document.getElementById(
+        "signUpConfirmPassword"
+      );
+
+      signUpForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // Perform your validation here
+        const name = signUpName.value.trim();
+        const email = signUpEmail.value.trim();
+        const password = signUpPassword.value.trim();
+        const confirmPassword = signUpConfirmPassword.value.trim();
+
+        if (
+          name === "" ||
+          email === "" ||
+          password === "" ||
+          confirmPassword === ""
+        ) {
+          alert("Please fill in all fields");
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match");
+          return;
+        }
+
+        // If validation passes, you can proceed with registration logic here
+        // For demonstration, let's just log the values
+        console.log("Name:", name);
+        console.log("Email:", email);
+        console.log("Password:", password);
+        console.log("Confirm Password:", confirmPassword);
+
+        // route to next page
+        window.location.href = "registration.html";
+
+        // Clear the form
+        signUpName.value = "";
+        signUpEmail.value = "";
+        signUpPassword.value = "";
+        signUpConfirmPassword.value = "";
+      });
+    </script>
+  </body>
+</html>

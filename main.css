@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+.registrationBox h3 {
+  color: #0392b5;
+  margin: 2rem 0;
+}
+.registrationBox .profilePicDiv {
+  display: block;
+  margin: auto;
+  position: relative;
+  min-height: 250px;
+}
+.registrationBox .profilePicDiv .imgAvatar input {
+  position: absolute;
+  opacity: 0 !important;
+  padding: 9rem;
+  z-index: 99;
+  height: 100px;
+  width: 300px;
+}
+.registrationBox .profilePicDiv .imgAvatar::after {
+  position: absolute;
+  display: block;
+  content: "";
+  background: url("assets/img/cam2.webp") no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 200px;
+  background-position: center;
+}
+.registrationBox .userDetails {
+  position: relative;
+  margin: 0.51rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 9px;
+}
+.registrationBox .userDetails .nameText {
+  display: flex;
+  width: 100%;
+  margin: 1rem 0;
+  justify-content: space-between;
+}
+.registrationBox .detailsDiv {
+  text-align: start;
+}
+.registrationBox .detailsDiv .container {
+  min-height: 400px;
+}
+.registrationBox .detailsDiv .nav-pills .nav-link.active,
+.registrationBox .detailsDiv .nav-pills .show > .nav-link {
+  border: 1px solid #0392b5;
+  color: #0392b5;
+  background-color: #fff;
+}
+.registrationBox .detailsDiv .form-control:focus {
+  box-shadow: none;
+  border: 1px solid #0392b5;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,77 @@
+	.registrationBox {
+		h3 {
+			color: $themeColor;
+			margin: 2rem 0;
+		}
+
+		.profilePicDiv {
+			display: block;
+			margin: auto;
+			position: relative;
+			min-height: 250px;
+
+
+
+
+			.imgAvatar {
+
+
+				input {
+					position: absolute;
+					opacity: 0 !important;
+					padding: 9rem;
+					z-index: 99;
+					height: 100px;
+					width: 300px;
+				}
+
+				&::after {
+					position: absolute;
+					display: block;
+					content: "";
+					background: url("assets/img/cam2.webp") no-repeat;
+					background-size: contain;
+					width: 100%;
+					height: 200px;
+					background-position: center;
+				}
+
+			}
+		}
+
+		.userDetails {
+			position: relative;
+			margin: .51rem;
+			border: 1px solid #ccc;
+			padding: 1rem;
+			border-radius: 9px;
+
+			.nameText {
+				display: flex;
+				width: 100%;
+				margin: 1rem 0;
+				justify-content: space-between;
+			}
+		}
+
+		.detailsDiv {
+			.container {
+				min-height: 400px;
+			}
+
+			// width: 75%;
+			text-align: start;
+
+			.nav-pills .nav-link.active,
+			.nav-pills .show>.nav-link {
+				border: 1px solid $themeColor;
+				color: $themeColor;
+				background-color: #fff;
+			}
+
+			.form-control:focus {
+				box-shadow: none;
+				border: 1px solid $themeColor;
+			}
+		}
+	}
