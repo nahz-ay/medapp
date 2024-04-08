@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 .registrationBox h3 {
-  color: #03c3c3;
+  color: #6cd7fa;
   margin: 2rem 0;
 }
 .registrationBox .profilePicDiv {
@@ -48,13 +48,13 @@
 }
 .registrationBox .detailsDiv .nav-pills .nav-link.active,
 .registrationBox .detailsDiv .nav-pills .show > .nav-link {
-  border: 1px solid #03c3c3;
-  color: #03c3c3;
+  border: 1px solid #6cd7fa;
+  color: #6cd7fa;
   background-color: #fff;
 }
 .registrationBox .detailsDiv .form-control:focus {
   box-shadow: none;
-  border: 1px solid #03c3c3;
+  border: 1px solid #6cd7fa;
 }
 .registrationBox .progress-bar__wrapper {
   position: relative;
@@ -87,7 +87,7 @@
 .registrationBox progress[value]::-webkit-progress-value {
   width: 0;
   border-radius: 50px;
-  background-color: #03c3c3;
+  background-color: #6cd7fa;
   transition: width 300ms ease;
 }
 
